@@ -1,0 +1,64 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(211, 135, 135, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+}
+.Contacto{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+h1{
+    font-size: 35px;
+    color: #3f06a9;
+}
+label{
+    color: #7254d5;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+input, textarea{
+    padding: 17px 25px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: #D1E4E6;
+    border: 2px solid #8cecf5;
+    color: #8b6fe6;
+    outline: none;
+}
+input::placeholder, textarea::placeholder{
+    color: #59706b;
+}
+.boton{
+    font-size: 30px;
+    color: #eef0f3;
+    border: 0;
+    border-radius: 25px;
+    background-color: #D1E4E6;
+    box-shadow: 0 0 20px rgba(91, 178, 83, 0.4);
+    cursor: pointer;
+}.boton:hover{
+    @media(max-width:991px){
+        boby{
+            padding: 30px;
+        }
+    form{
+        padding: 50px 30px;
+        width: 100%;
+    }
+    
+    input{
+        padding: 15px
+    }
+    }
+}
