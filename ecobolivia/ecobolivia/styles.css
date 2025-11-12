@@ -1,0 +1,336 @@
+/* Variables de Color */
+:root {
+    --color-primary: #28a745; /* Verde fuerte para acentos */
+    --color-secondary: #218838; /* Verde más oscuro al pasar el ratón */
+    --color-background: #f8f9fa; /* Fondo claro */
+    --color-text: #343a40; /* Texto oscuro */
+    --color-light: #ffffff; /* Color claro para texto en fondo oscuro */
+    --color-border: #dee2e6; /* Gris claro para bordes */
+}
+
+/* Estilos Generales y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Navegación (Menu Horizontal) --- */
+.main-nav {
+    background-color: var(--color-secondary);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main-nav ul li a {
+    color: var(--color-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* --- Encabezado --- */
+.page-header {
+    width: 100%;
+}
+
+.header-content {
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.header-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-light);
+    text-align: center;
+}
+
+.header-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--color-light);
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.header-overlay h1 {
+    color: var(--color-light);
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 0;
+}
+
+/* --- Contenido de Inicio (Mapa) --- */
+.map-container {
+    margin-top: 30px;
+    background: var(--color-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    border-radius: 5px;
+    height: 450px;
+}
+
+/* --- Estilos para Afiches/Tarjetas (Grupos, Fauna, Flora) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--color-light);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--color-secondary);
+}
+
+.card-body p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.card-body a.btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.card-body a.btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* --- Estilos para Botones de Tutoriales y Formularios (fotos.html) --- */
+.tutorial-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.tutorial-buttons a {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-buttons a:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* --- Videos de Tutoriales (Simulación de Subpágina) --- */
+.video-item {
+    margin-bottom: 30px;
+    background: var(--color-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* --- Pie de Página (Footer) --- */
+.site-footer {
+    background-color: #343a40;
+    color: var(--color-light);
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    flex-wrap: wrap;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media p {
+    margin-right: 15px;
+}
+
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    transition: opacity 0.3s;
+}
+
+.social-media a img:hover {
+    opacity: 0.7;
+}
+
+/* --- Adaptabilidad (Responsive Design) --- */
+@media (max-width: 768px) {
+    /* Menú */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Encabezado */
+    .header-image {
+        height: 180px;
+    }
+
+    .header-overlay h1 {
+        font-size: 1.8em;
+    }
+    
+    .header-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Pie de página */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-footer {
+        margin-bottom: 15px;
+    }
+    
+    .social-media {
+        margin-top: 15px;
+    }
+}
